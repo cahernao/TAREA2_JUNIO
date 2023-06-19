@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SocketIO</title>
+</head>
+<body>
+    <h1>Lista de Mensajes</h1>
+    <p style="font-size: 10px;">orden desc</p>
+    <div id="mensajes"></div>
+    <br>
+    <ul id="tareas"></ul>
+    <form id="form" onsubmit="return addMessage(this)">
+        <input type="text" name="" id="text" placeholder="Texto"><br>
+        <button>Agregar</button>
+    </form>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="main.js"></script>
+    <!--<script>
+        var socket = io();
+
+        let tareas = document.getElementById("tareas");
+        let form = document.getElementById("form");
+        let input = document.getElementById("tarea");
+
+        form.addEventListener("submit", e => {
+            e.preventDefault();
+            if ( input.value ) {
+                socket.emit("task", input.value);
+                input.value = '';
+            }
+        });
+
+        socket.on('mensaje', (t) => {
+            let item = document.createElement('li');
+            item.textContent = t;
+            tareas.appendChild(item);
+            window.scrollTo(0, document.body.scrollHeight);
+            // console.log(t);
+        });
+
+    </script>-->
+</body>
+</html>
